@@ -23,12 +23,12 @@ let read path =
     |> Array.map (fun line -> line |> Array.map int)
     |> Array.map (fun line -> { Label = line.[0]; Pixels = line.[1..] })
 
-let trainingPath = @"c:\users\mathias\documents\visual studio 2012\Projects\Digits-Improve\Digits-Improve\trainingsample.csv"
+let trainingPath = @"trainingsample.csv"
 let training = read trainingPath
 
 let basicModel = train training
 
-let validationPath = @"c:\users\mathias\documents\visual studio 2012\Projects\Digits-Improve\Digits-Improve\validationsample.csv"
+let validationPath = @"validationsample.csv"
 let validation = read validationPath
 
 let evaluate (model:Model) =
